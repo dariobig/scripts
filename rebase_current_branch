@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+CURRENT_BRANCH="$(current_branch)"
+
+if [ $CURRENT_BRANCH == "master" ] || [ $CURRENT_BRANCH == "origin/master" ]
+then
+    echo "current branch is $CURRENT_BRANCH! Can't rebase master onto itself!"
+    exit 1
+fi
+
+CMD1="git checkout master"
+CMD2="git pull"
+CMD3="git checkout $CURRENT_BRANCH"
+CMD4="git rebase master $CURRENT_BRANCH"
+
+echo "I'm going to run the following commands:"
+echo " - $CMD1"
+echo " - $CMD2"
+echo " - $CMD3"
+echo " - $CMD4"
+
+read -p "Proceed (y/n)? " choice
+case "$choice" in 
+  y|Y ) echo "Running commands...";;
+  * ) echo "ok, bye then!" & exit 1;;
+esac
+
+echo "$CMD1"
+$CMD1
+echo ""
+
+echo "$CMD2"
+$CMD2
+echo ""
+
+echo "$CMD3"
+$CMD3
+echo ""
+
+echo "$CMD4"
+$CMD4
+echo ""
+
+echo "all done!"

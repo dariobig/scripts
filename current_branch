@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git branch | grep "\*" | sed "s/[*] //g"
