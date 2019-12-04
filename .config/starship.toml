@@ -1,0 +1,30 @@
+[conda]
+disabled = false
+symbol = "🅒"
+
+[env_var]
+variable = "ENV_NAME"
+prefix = ""
+symbol = "🌍"
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 12
+truncation_symbol = "…"
+
+[git_state]
+progress_divider = " of "
+cherry_pick = "🍒 "
+
+[hostname]
+ssh_only = true
+prefix = "⟪"
+suffix = "⟫"
+disabled = false
+
+[kubernetes]
+disabled = false
+symbol = "⎈ "
+
+[python]
+disabled = false

@@ -1,4 +1,22 @@
 #!/usr/bin/env bash
+
+proceed_or_exit()
+{
+    read -p "Proceed (y/n)? " choice
+    case "$choice" in 
+      y|Y ) echo "Running commands...";;
+      * ) echo "ok, bye then!" & exit 1;;
+    esac
+}
+
+check_failure()
+{
+  if [[ ("$?" -ne "0") ]]; then
+    echo "command failed for $(current_branch)"
+    exit 1
+  fi
+}
+
 CURRENT_BRANCH="$(current_branch)"
 
 if [ $CURRENT_BRANCH == "master" ] || [ $CURRENT_BRANCH == "origin/master" ]
@@ -18,26 +36,28 @@ echo " - $CMD2"
 echo " - $CMD3"
 echo " - $CMD4"
 
-read -p "Proceed (y/n)? " choice
-case "$choice" in 
-  y|Y ) echo "Running commands...";;
-  * ) echo "ok, bye then!" & exit 1;;
-esac
-
 echo "$CMD1"
 $CMD1
+check_failure
+proceed_or_exit
 echo ""
 
 echo "$CMD2"
 $CMD2
+check_failure
+proceed_or_exit
 echo ""
 
 echo "$CMD3"
 $CMD3
+check_failure
+proceed_or_exit
 echo ""
 
 echo "$CMD4"
 $CMD4
+check_failure
+proceed_or_exit
 echo ""
 
 echo "all done!"
