@@ -78,7 +78,7 @@
         "editor.autoSurround": "languageDefined"
     },
     "python.venvFolders": [
-        "${workspaceFolder}/.venv",
+        "${workspaceFolder}/.venv"
     ],
 
     "terminal.integrated.shell.osx": "/bin/zsh",
