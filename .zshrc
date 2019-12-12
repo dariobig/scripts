@@ -70,3 +70,5 @@ if [ -f '/Users/bigo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/bigo/googl
 if [ -f '/Users/bigo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/bigo/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH=$PATH:~/bin:~/src/scripts
+
+export KUBE_EDITOR='code --wait'
