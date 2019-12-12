@@ -65,11 +65,15 @@
     "git.autofetch": true,
 
     "python.dataScience.askForKernelRestart": false,
-    "python.jediEnabled": false,
     "python.terminal.activateEnvironment": true,
     "python.dataScience.enableAutoMoveToNextCell": false,
     "python.dataScience.stopOnFirstLineWhileDebugging": false,
     "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.jediEnabled": true,
+    "python.jediMemoryLimit": 4096,
+    "python.analysis.memory.keepLibraryAst": true,
+    "python.analysis.memory.keepLibraryLocalVariables": true,
+    "python.analysis.cacheFolderPath": "${env:HOME}/.temp/code",
     "[python]": {
         "files.trimTrailingWhitespace": true,
         "editor.tabSize": 4,
