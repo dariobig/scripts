@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+POD=$(kubectl get pods -o name | grep -i $1 | head -n 1)
+PORT=${2:-5432}
+echo "Starting tunnel to $POD:${PORT} ..."
+kubectl port-forward $POD $PORT:$PORT
