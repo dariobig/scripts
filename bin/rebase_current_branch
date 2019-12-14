@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 proceed_or_exit()
 {
@@ -35,29 +35,26 @@ echo " - $CMD1"
 echo " - $CMD2"
 echo " - $CMD3"
 echo " - $CMD4"
+proceed_or_exit
 
 echo "$CMD1"
 $CMD1
 check_failure
-proceed_or_exit
 echo ""
 
 echo "$CMD2"
 $CMD2
 check_failure
-proceed_or_exit
 echo ""
 
 echo "$CMD3"
 $CMD3
 check_failure
-proceed_or_exit
 echo ""
 
 echo "$CMD4"
 $CMD4
 check_failure
-proceed_or_exit
 echo ""
 
-echo "all done!"
+echo "All done! current branch is $(current_branch)"
